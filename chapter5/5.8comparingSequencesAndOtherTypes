@@ -1,0 +1,3 @@
+5.8 Comparing Sequences and other Types
+
+Sequence objects typically may be compared to other objects with the same sequence type. The comparison uses lexicographical ordering.

@@ -1,3 +1,4 @@
+掛
 We can reate a function that writes the Fibonacci series to an arbitrary boundary:
 >>> def fib(n):	# write fibonacci series up to n
     """Print a Fibonacci series up to n."""
@@ -14,3 +15,13 @@ fib(2000)
 The keyword def introduces a function definition. It must be followed by the function name and parenthesized list of formal parameters. The statements that form the body of the function start at the next line, and must be indented.
 
 Make a habit to include docstrings.
+
+The execction introduces new symbol table used for the local variables of the function. More precisely, all variable assignments in a function store the vlaue in the local symbol table, whereas variable references look in the local symbol table, then in the local symbol tables of enclosing functions, then in the global symtbol table, and finally in the table of the built-in names. Thus global variables unless, for global variables, named in a global statement, or for variables of enclosing functions, named in a nonlocal statement), although they may be referenced.
+The actual parameters (arguments) to a function call are introducded in the local symbol tagble of the called function when it is called; thus, arguments are passed using call by value (where the value is always an object reference not the value of the object). When a function calls another function a new local symbol table is created for that call.
+A function defintion introduces the function name in the current symbol table. The value of the function name has a type that is recognized by the interpreter as a user-defined function. This value can be assigned to another name which can then also be used as a function. this serves as a general renaming mechanism.
+>>>fib
+<function fib at 10042ed0>
+>>>f = fib
+>>>f(100)
+0 1 1 2 3 5 8 13 21 34 55 89
+

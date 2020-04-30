@@ -1,0 +1,22 @@
+4.7.7 Documentation Strings
+
+Here are some conventions about the content and formatting of documentation strings.
+The first line should always be a short, consise summary of the object's purpose. For brevity, it should not explicitly state the object's name or type, since these are available by other means (except if the name happens to be a verb desciring a function's operation). This line should begin with a capital letter and end with a period.
+If there are more lines in the documentation string, the second line should be blank, visually separating the summary from the rest of the description. The following lines should be one or more paragraphs describing the object's calling convetions, its side effects, etc.
+The python parse does not strip indentation from multi-line string literals in Python, so tools that process documetation have to strip indentation if desired. This is done using the following convention. The first non-blank line after the first line of the string determines the amount of indentation for the entire documetation string. (We can't use the first line since it is generally adjacent to the string's opening quotes so its indentation is not apparent in the string literal.) Whitespace "equivalent" to this indentation is then stripped from the start of all lines of the string. Lines that are indented less should not occur, but if they occur all their leading whitespaces should be stripped. Equivalence of whitespace should be tested after expansion of tabs (to 8 spaces, normall).
+
+Here is an exmaple of a multi-line docstring:
+
+>>> def my_function:
+	"""Do nothing, but document it.
+
+	No, really, it doesn't do anything.
+	"""
+	pass
+
+>>> print(my_function._doc_)
+Do nothing, but document it.
+
+	o, really, it doesn't do anything.
+
+Basically, docstrings are inline comments that can apparently be printed but my machine doesn't like me.
